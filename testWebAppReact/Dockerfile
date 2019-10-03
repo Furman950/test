@@ -8,8 +8,15 @@ COPY ["testWebAppReact.csproj", "testWebAppReact/"]
 ENV ASPNETCORE_URLS=http://+:5585
 RUN dotnet restore "testWebAppReact/testWebAppReact.csproj"
 WORKDIR /src/testWebAppReact
-COPY ..
+COPY . .
+
+RUN apt-get update -yq && apt-get upgrade -yq
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install 
+
 RUN dotnet build "testWebAppReact.csproj" -c Release -r linux-arm -o /app
+
 
 FROM build AS publish
 RUN dotnet publish "testWebAppReact.csproj" -c Release -r linux-arm -o /app
