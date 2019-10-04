@@ -14,7 +14,7 @@ DOCKERFILE_LOCATION="./testWebAppReact/Dockerfile"
 
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-docker build --frontend dockerfile.v0 \
+buildctl build --frontend=dockerfile.v0 \
             --local dockerfile=. \
             --local context=. \
             --exporter image \
@@ -23,7 +23,7 @@ docker build --frontend dockerfile.v0 \
             --frontend-opt platform=linux/amd64 \
             --frontend-opt filename=./${DOCKERFILE_LOCATION}
 
-docker build --frontend dockerfile.v0 \
+buildctl build --frontend=dockerfile.v0 \
             --local dockerfile=. \
             --local context=. \
             --exporter image \
