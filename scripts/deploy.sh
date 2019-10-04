@@ -12,6 +12,7 @@ DOCKER_USERNAME=$2
 DOCKER_PASSWORD=$3
 
 echo "TAG: $TAG"
-docker build -f ./test/testWebAppReact/Dockerfile -t "furman9596/test:$TAG"  .
+docker build -f ./testWebAppReact/Dockerfile -t "furman9596/test:$TAG" .
+echo "$DOCKER_PASSWORD"
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 docker push furman9596/test:$TAG
