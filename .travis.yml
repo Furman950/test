@@ -4,9 +4,8 @@ sudo: required
 mono: none
 dotnet: 3.0
 script:
- - pwd
- - ls -l
  - dotnet test
+ - ./scripts/deplay.sh
 
 after_success:
  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
