@@ -12,7 +12,6 @@ before_install:
   - export BUILDKIT_HOST=tcp://0.0.0.0:1234
 script:
  - dotnet test
- - ./scripts/build.sh
 
 deploy:
  provider: script
