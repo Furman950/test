@@ -15,5 +15,12 @@ namespace NUnitTestProject1
             bool validTest = true;
             Assert.IsTrue(validTest);
         }
+
+        [Test]
+        public void Test2()
+        {
+            bool validTest = true;
+            Assert.IsTrue(validTest);
+        }
     }
 }
