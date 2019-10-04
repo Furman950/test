@@ -5,7 +5,7 @@ mono: none
 dotnet: 3.0
 script:
  - dotnet test
- - ./scripts/deplay.sh
+ - ./scripts/deploy.sh
 
 after_success:
  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
