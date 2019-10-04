@@ -5,7 +5,8 @@ mono: none
 dotnet: 3.0
 script:
  - dotnet test
- - ./scripts/deploy.sh
+ - echo $TRAVIS_TAG
+ - ./scripts/deploy.sh 1.0.1 $DOCKER_USERNAME $DOCKER_PASSWORD
 
 after_success:
  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
