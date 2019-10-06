@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Running deploy script"
-(cd /usr/share/; ls -l)
+(cd /usr/share/dotnet/host/fxr; ls -l)
 set -ev
 if [ $# -ne 3 ]
 then
