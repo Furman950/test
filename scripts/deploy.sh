@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Running deploy script"
+(cd /usr/share/; ls -l)
 set -ev
 if [ $# -ne 3 ]
 then
