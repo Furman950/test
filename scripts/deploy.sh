@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "Running deploy script"
-(cd /usr/share/dotnet/host/fxr; ls -l)
+echo "---------------------------------dotnet---------------------------"
+whereis dotnet
+echo "---------------------------------dotnet---------------------------"
 set -ev
 if [ $# -ne 3 ]
 then
